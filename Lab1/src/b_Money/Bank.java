@@ -119,6 +119,9 @@ public class Bank {
 	 * @param amount Amount of Money to transfer
 	 * @throws AccountDoesNotExistException If one of the accounts do not exist
 	 */
+
+	//substract amount of money from one account and add it to another account.
+	//It can be done only if those account belong to the same bank and do exist.
 	public void transfer(String fromaccount, String toaccount, Money amount) throws AccountDoesNotExistException {
 		transfer(fromaccount, this, fromaccount, amount);
 	}
@@ -143,6 +146,8 @@ public class Bank {
 	 * @param accountid Id of account to remove timed payment from
 	 * @param id Id of timed payment
 	 */
+
+
 	public void removeTimedPayment(String accountid, String id) {
 		Account account = accountlist.get(accountid);
 		account.removeTimedPayment(id);

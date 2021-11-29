@@ -84,6 +84,7 @@ public class Money implements Comparable {
 	 * Negate the amount of money, i.e. if the amount is 10.0 SEK the negation returns -10.0 SEK
 	 * @return A new instance of the money class initialized with the new negated money amount.
 	 */
+	//returns a negated amount of money with the same currency
 	public Money negate() {
 		return new Money(-this.amount,this.currency);
 	}
@@ -97,6 +98,12 @@ public class Money implements Comparable {
 	 * A negative integer if this Money is less valuable than the other Money.
 	 * A positive integer if this Money is more valuiable than the other Money.
 	 */
+	/*compare to Money objects based on universal value.
+	If they are equal returns 0.
+	If the first one is smaller returns -1.
+	If the first one is higher returns 1.
+	*/
+
 	public int compareTo(Object other) {
 		return this.universalValue().compareTo(((Money)other).universalValue());
 	}
@@ -109,6 +116,8 @@ public class Money implements Comparable {
 	 *
 	 * @return String representing the amount of Money.
 	 */
+
+	//It's used to return a needed values
 	@Override
 	public String toString() {
 		return "Money:" +
